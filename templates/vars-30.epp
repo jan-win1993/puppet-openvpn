@@ -26,7 +26,7 @@ export GREP="grep"
 # This variable should point to
 # the openssl.cnf file included
 # with easy-rsa.
-export EASYRSA_SSL_CONF="$EASY_RSA/openssl-1.0.cnf"
+EASYRSA_SSL_CONF="$EASY_RSA/<%- if versioncmp($version, "3.0.3") == 1 { -%>openssl-easyrsa.cnf<% } -%><%- if versioncmp($version, "3.0.3") <= 0 { -%>openssl-1.0.cnf<% } -%>"
 
 # Edit this variable to point to
 # your soon-to-be-created key
